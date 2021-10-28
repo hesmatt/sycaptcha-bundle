@@ -1,12 +1,47 @@
 {
   "name": "matt/sycaptcha",
   "description": "Bundle for form protection using captcha, includes reCaptcha and hCaptcha",
+  "homepage": "https://github.com/hesmatt/sycaptcha-bundle",
+  "keywords": [
+    "symfony recaptcha",
+    "googlerecaptcha",
+    "google recaptcha",
+    "google recaptcha v3",
+    "recaptcha v3",
+    "symfony google recaptcha v3",
+    "symfony google recaptcha",
+    "recaptcha",
+    "recaptcha v3 symfony",
+    "symfony recaptcha v3",
+    "google recaptcha v2",
+    "recaptcha v2",
+    "symfony google recaptcha v2",
+    "recaptcha v2 symfony",
+    "symfony recaptcha v2",
+    "symfony hcaptcha",
+    "hcaptcha validation",
+    "symfony form hcaptcha",
+    "hcaptcha",
+    "symfony",
+    "captcha",
+    "no-captcha",
+    "google",
+    "spam",
+    "forms",
+    "contact",
+    "security",
+    "anti-spam",
+    "anti-bot",
+    "anti-bots",
+    "validation"
+  ],
   "type": "symfony-bundle",
   "license": "MIT",
   "authors": [
     {
       "name": "Matt",
-      "email": "contact@projectsfrommatt.com"
+      "email": "contact@projectsfrommatt.com",
+      "homepage": "http://projectsfrommatt.com"
     }
   ],
   "minimum-stability": "stable",

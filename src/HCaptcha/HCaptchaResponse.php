@@ -13,7 +13,7 @@ class HCaptchaResponse
     public $success = false;
 
     /**
-     * @var \Symfony\Component\Validator\Constraints\Date
+     * @var \DateTimeImmutable
      */
     public $challengeTimestamp;
 
@@ -34,17 +34,17 @@ class HCaptchaResponse
     }
 
     /**
-     * @param \Symfony\Component\Validator\Constraints\Date $challengeTimestamp
+     * @param \DateTimeImmutable $challengeTimestamp
      */
-    public function setChallengeTimestamp(\Symfony\Component\Validator\Constraints\Date $challengeTimestamp): void
+    public function setChallengeTimestamp(\DateTimeImmutable $challengeTimestamp): void
     {
         $this->challengeTimestamp = $challengeTimestamp;
     }
 
     /**
-     * @return \Symfony\Component\Validator\Constraints\Date
+     * @return \DateTimeImmutable
      */
-    public function getChallengeTimestamp(): \Symfony\Component\Validator\Constraints\Date
+    public function getChallengeTimestamp(): \DateTimeImmutable
     {
         return $this->challengeTimestamp;
     }
