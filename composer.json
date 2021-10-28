@@ -1,0 +1,30 @@
+{
+  "name": "matt/sycaptcha",
+  "description": "Bundle for form protection using captcha, includes reCaptcha and hCaptcha",
+  "type": "symfony-bundle",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Matt",
+      "email": "contact@projectsfrommatt.com"
+    }
+  ],
+  "minimum-stability": "stable",
+  "autoload": {
+    "psr-4": {
+      "Matt\\SyCaptchaBundle\\": "src/"
+    }
+  },
+  "require": {
+    "php": ">=7.1",
+    "symfony/framework-bundle": "^5.2",
+    "symfony/twig-bundle": "^5.3",
+    "google/recaptcha": "^1.2",
+    "symfony/form": "^5.3",
+    "twig/twig": "^3.3",
+    "symfony/yaml": "^5.3",
+    "symfony/validator": "^5.3",
+    "ext-curl": "*",
+    "ext-json": "*"
+  }
+}

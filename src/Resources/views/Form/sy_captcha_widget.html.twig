@@ -1,0 +1,66 @@
+{# Widget for reCaptcha V2 #}
+{% block sy_captcha_recaptcha_v2_widget %}
+    {% if form.vars.enabled is same as true %}
+        {% set type = type|default('hidden') %}
+        {{ block('form_widget_simple') }}
+
+        <div id="{{ id }}-view" data-theme="{{ form.vars.theme }}"></div>
+        <script {% if form.vars.script_nonce_csp is defined %}nonce="{{ form.vars.script_nonce_csp }}"{% endif %}>
+            var recaptchaCallback_{{ form.vars.callback_id }} = () => {
+                grecaptcha.ready(() => {
+                    grecaptcha.render("{{ id }}-view", {
+                        sitekey: '{{ form.vars.site_key }}',
+                        callback: (token) => {
+                            document.getElementById('{{ id }}').value = token;
+                        }
+                    });
+                })
+            }
+        </script>
+        <script src="//{{ form.vars.api_host }}/recaptcha/api.js?onload=recaptchaCallback_{{ form.vars.callback_id }}&render=explicit"
+                {% if form.vars.script_nonce_csp is defined %}nonce="{{ form.vars.script_nonce_csp }}"{% endif %}></script>
+    {% endif %}
+{% endblock %}
+
+{# Widget for reCaptcha V3 #}
+{% block sy_captcha_recaptcha_v3_widget %}
+    {% if form.vars.enabled is same as true %}
+        {% set type = type|default('hidden') %}
+        {{ block('form_widget_simple') }}
+
+        <script {% if form.vars.script_nonce_csp is defined %}nonce="{{ form.vars.script_nonce_csp }}"{% endif %}>
+            var recaptchaCallback_{{ form.vars.callback_id }} = () => {
+                grecaptcha.execute('{{ form.vars.site_key }}', {
+                    action: '{{ form.vars.action_name }}'
+                }).then((token) => {
+                    document.getElementById('{{ id }}').value = token;
+                });
+            }
+        </script>
+        <script src="//{{ form.vars.api_host }}/recaptcha/api.js?onload=recaptchaCallback_{{ form.vars.callback_id }}&render={{ form.vars.site_key }}"
+                {% if form.vars.script_nonce_csp is defined %}nonce="{{ form.vars.script_nonce_csp }}"{% endif %}></script>
+    {% endif %}
+{% endblock %}
+
+{# Widget for hCaptcha #}
+{% block sy_captcha_hcaptcha_widget %}
+    {% if form.vars.enabled is same as true %}
+        {%- set type = type|default('hidden') -%}
+        {{ block('form_widget_simple') }}
+
+        <div id="{{ id }}-view" {% if form.vars.invisible is same as true %}data-size="invisible"{% endif %} data-theme="{{ form.vars.theme }}"></div>
+        <script {% if form.vars.script_nonce_csp is defined %}nonce="{{ form.vars.script_nonce_csp }}"{% endif %}>
+            var hCaptchaCallback_{{ form.vars.callback_id }} = () => {
+                hcaptcha.render("{{ id }}-view", {
+                    sitekey: '{{ form.vars.site_key }}',
+                    callback: (token) => {
+                        document.getElementById('{{ id }}').value = token;
+                    }
+                });
+            }
+        </script>
+        <script src='https://{{ form.vars.api_host }}/1/api.js?onload=hCaptchaCallback_{{ form.vars.callback_id }}&render=explicit'
+                async defer
+                {% if form.vars.script_nonce_csp is defined %}nonce="{{ form.vars.script_nonce_csp }}"{% endif %}></script>
+    {% endif %}
+{% endblock %}
