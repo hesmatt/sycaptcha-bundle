@@ -43,7 +43,7 @@ Register bundle into `app/AppKernel.php` **Symfony 3 and below**
     sy_captcha:  
 	  recaptcha_v2:  
 	    site_key: 'site_key'  
-		secret_key: 'secret_key'  
+	    secret_key: 'secret_key'  
 
 ## Usage
 
