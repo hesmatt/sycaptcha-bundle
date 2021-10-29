@@ -85,12 +85,12 @@ The whole config looks like this now
 	    site_key: null  
 	    secret_key: null  
 	    api_host: 'www.google.com'  
-		score_threshold: 0.5  
+	    score_threshold: 0.5  
 	  hcaptcha:  
 	    site_key: null  
 	    secret_key: null  
 	    api_host: 'js.hcaptcha.com'  
-		invisible: false
+	    invisible: false
 
 As you can see there are few configurable options, and their default values.
 Let's break the script a little, please note that some options are only available for hCaptcha, some for reCaptcha only and so forth.
