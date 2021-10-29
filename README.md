@@ -15,7 +15,7 @@ Invisible reCaptcha V2 **isn't** supported, due to the fact that it's 'lower' en
 
 With [composer](https://getcomposer.org/) require
 
-`require matt/sycaptcha`
+`composer require matt/sycaptcha`
 
 
 ## Configuration without symfony/flex
